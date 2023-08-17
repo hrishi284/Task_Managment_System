@@ -1,0 +1,58 @@
+<div class="shadow-lg bg-body rounded"><div class="text-secondary px-4 py-5 text-center" style="background-color: rgb(244, 107, 10);">
+    <div class="py-5">
+      <h1 class="display-5 fw-bold text-white">TASK DETAILS</h1>
+      <!-- <button type="button" class="btn btn-outline-success btn-lg px-4">Add Task</button>   -->
+      <div >
+        
+<table class="table shadow-lg"  >
+    <thead class="table-dark">
+    <tr>
+    <th>Id</th>
+    <th>Title <button class="btn btn-dark dropdown-toggle" data-sort="none" (click)="sortingTitle()"><i class="fa fa-sort"></i></button></th>
+    <th>Description</th>
+    <th>Due Date  <button class="btn btn-dark dropdown-toggle" data-sort="none" (click)="sorting()"><i class="fa fa-sort"></i></button></th>
+    <th>Complete Status</th>
+    <th>Delete</th>
+    <th>Update</th>
+    </tr>
+</thead>    
+<tbody>
+    <tr *ngFor="let task of tasks " >
+        <td>{{task.id}}</td>
+        <td>{{task.title}}</td>
+        <td>{{task.description}}</td>
+        <td>{{task.dueDate}}</td>    
+        <td>{{task.isCompleted}}</td>
+        <td><button class="btn btn-outline-danger  fw-bold" (click)="delete(task.id.toString())">Delete</button></td>
+        <td><button class="btn btn-outline-info  fw-bold" (click)="updatedel(task.id.toString())">Update</button></td>
+    </tr>
+</tbody>
+</table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <button (click)="sorting()">Sort By Due Date</button>
+<h1> Task list </h1>
+<table border="1" >
+    <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Due Date</th>
+    <th>Complete Status</th>
+    <th>Delete</th>
+    <th>Update</th>
+    </tr>
+    <tr *ngFor="let task of tasks " >
+        <td>{{task.id}}</td>
+        <td>{{task.title}}</td>
+        <td>{{task.description}}</td>
+        <td>{{task.dueDate}}</td>    
+        <td>{{task.isCompleted}}</td>
+        <td><button (click)="delete(task.id.toString())">Delete</button></td>
+        <td><button (click)="updatedel(task.id.toString())">Update</button></td>
+    </tr>
+</table> -->

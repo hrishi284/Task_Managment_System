@@ -1,0 +1,42 @@
+<br>  <br>  <br>  <br>  <br>  
+<div class="row" style="background-color: rgb(244, 107, 10);">
+    <h2 class="display-5 fw-bold text-white text-center">Update Details</h2>
+<div class="w-50 col-md-9 offset-md-3 shadow-lg p-3 mb-5 bg-body rounded">
+
+<div class="mb-3">
+<label class="form-label" >
+    Id :
+</label>
+<br>
+<input type="text" class="form-control" name="title" [value]= task.id  disabled>
+</div>
+
+<label class="form-label">
+    Title :
+</label>
+<input type="text" name="title" class="form-control" [value]= task.title [(ngModel)]="task.title">
+<br>
+
+<label class="form-label">
+    Description :
+</label>
+<input type="text" name="description" class="form-control" [value]= task.description [(ngModel)]="task.description" >
+<br>
+
+<label for="duedate" class="form-label">Task DueDate</label>
+
+<input type="date" class="form-control"  format='yyyy-mm-dd hh:mm a'    id="duedate" name="taskDate" [(ngModel)]="task.dueDate">
+
+<br> 
+<label class="form-label">
+   Complete 
+</label>
+&nbsp;
+<mat-slide-toggle [checked]="task.isCompleted" (change)="onChange($event)"
+[(ngModel)]="isChecked" >
+</mat-slide-toggle>
+<br>
+<button class="btn btn-info btn-rounded"     (click)="updateTasks()">Update</button>
+&nbsp;&nbsp;
+<button type="submit" class="btn btn-light btn-rounded ">Cancle</button>    
+</div>
